@@ -1,0 +1,145 @@
+
+/* ajustes generales para todas las paginas */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  padding: 10px;
+}
+
+
+body {
+    font-family: 'Prompt', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+  color: green;
+  text-shadow: 0 0 5px rgb(69, 245, 69);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+/* barra de navegacion */
+
+
+/* carrusel de imagenes */
+  .carousel-inner {
+    position: relative;
+}
+.carousel-inner img {
+    max-height: 50vh;
+    object-fit: cover;
+}
+.carousel-inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 196, 26, 0.152), rgba(0, 255, 0, 0.3)); /* Capa azul */
+    z-index: 1;
+    pointer-events: none;
+}
+.carousel-inner img {
+    position: relative;
+    z-index: 0;
+    filter: brightness(50%); /* Suaviza un poco la imagen */
+}
+
+
+/* tarjetas de creditos y de info */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  max-width: 300px;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Sube la tarjeta */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombreado más fuerte */
+}
+.card img {
+  height: 180px; /* Altura uniforme para todas las imágenes */
+  object-fit: cover; /* Recorta la imagen sin deformarla */
+}
+
+
+/* simulador de credito */
+
+ /* Indicador específico para este contenedor */
+ .credito-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.credito-box {
+  width: 70%;
+  max-width: 700px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+h4 {
+  color: green;
+  text-align: center;
+}
+.result {
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+}
+/* inicio de sesion */
+
+.form-signin {
+  max-width: 400px;
+  padding: 1rem;
+}
+
+
+.alert {
+  position: fixed;
+  top: 20px; /* Distancia desde la parte superior, puedes ajustar */
+  left: 50%;
+  transform: translateX(-50%); /* Centra horizontalmente */
+  z-index: 1050;
+  animation: slideFadeIn 0.5s ease forwards, slideFadeOut 0.5s ease 3s forwards;
+  animation-fill-mode: forwards;
+  width: auto; /* Se adapta al contenido */
+  max-width: 90%; /* Opcional, para evitar que sea demasiado grande en móviles */
+  text-align: center;
+}
+
+/* Animaciones (como ya tenías) */
+@keyframes slideFadeIn {
+  from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-15px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes slideFadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-15px);
+  }
+}
